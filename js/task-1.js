@@ -1,7 +1,6 @@
 "use strict";
 
 function isEnoughCapacity(products, containerSize) {
-  let productValues = Object.values(products);
   let totalNumberOfProducts = 0;
 
   for (let product in products) {
@@ -10,6 +9,7 @@ function isEnoughCapacity(products, containerSize) {
   return totalNumberOfProducts < containerSize ? "true" : "false";
 
   // ==============  another method  =============== //
+  //   let productValues = Object.values(products);
   //   for (let value of productValues) {
   //     totalNumberOfProducts += value;
   //   }
