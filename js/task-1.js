@@ -4,24 +4,28 @@ function isEnoughCapacity(products, containerSize) {
   let productValues = Object.values(products);
   let totalNumberOfProducts = 0;
 
+  for (let product in products) {
+    totalNumberOfProducts += products[product];
+  }
+  return totalNumberOfProducts < containerSize ? "true" : "false";
+
+  // ==============  another method  =============== //
   //   for (let value of productValues) {
   //     totalNumberOfProducts += value;
   //   }
+
+  // ==============  another method  =============== //
 
   //   let totalNumberOfProducts = Object.values(products).reduce(
   //     (accumulator, currentValue) => accumulator + currentValue,
   //     0
   //   );
 
-  for (let product in products) {
-    totalNumberOfProducts += products[product];
-  }
-
-  if (totalNumberOfProducts < containerSize) {
-    return `true`;
-  } else {
-    return `false`;
-  }
+  // if (totalNumberOfProducts < containerSize) {
+  //   return `true`;
+  // } else {
+  //   return `false`;
+  // }
 }
 
 console.log(isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)); // true
